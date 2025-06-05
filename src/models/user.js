@@ -11,7 +11,6 @@ const userSchema= new Schema({
         },
         lastName:{
             type:String,
-            required:true,
             minLength:3,
             maxLength:20,
         },
@@ -38,11 +37,9 @@ const userSchema= new Schema({
             type:[String],
         },
         password:{
-            typeof:String,
+            type:String,
             required:true,
-            minLength:7,
-            trim:true,
-            select:false,
+            // select:false,
         },
         image:[{
              data:Buffer,
@@ -53,5 +50,5 @@ const userSchema= new Schema({
         timestamps: true, 
         }       
 );
-const User=mongoose.model('user',userSchema);
-module.exports=User;
+const user=mongoose.model('user',userSchema);
+module.exports=user;
